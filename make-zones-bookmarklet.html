@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Make.com Multi-Zone Opener</title>
+  <title>MakeAdmin All</title>
   <link rel="icon" href="https://www.make.com/favicon.ico" type="image/x-icon">
   <style>
     body {
@@ -49,11 +49,11 @@
   </style>
 </head>
 <body>
-  <h1>Make.com Multi-Zone Opener</h1>
-  <p>Opens the current page across all production zones in new tabs.</p>
+  <h1>MakeAdmin All</h1>
+  <p>Opens the current Make admin or native app URL across all production zones in new tabs.</p>
 
   <a class="bookmarklet-link" href="javascript:(function(){var zones=['us1.make.com','us2.make.com','eu1.make.com','eu2.make.com','us1.make.celonis.com','eu1.make.celonis.com','we.make.com'];var path=location.pathname+location.search+location.hash;var currentHost=location.host;zones.filter(function(z){return z!==currentHost;}).forEach(function(z){var a=document.createElement('a');a.href='https://'+z+path;a.target='_blank';a.rel='noopener';document.body.appendChild(a);a.click();document.body.removeChild(a);});})();">
-    Open in All Zones
+    MakeAdmin All
   </a>
 
   <div class="steps">
