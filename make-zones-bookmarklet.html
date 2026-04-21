@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Make.com Multi-Zone Opener</title>
+  <link rel="icon" href="https://www.make.com/favicon.ico" type="image/x-icon">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      max-width: 600px;
+      margin: 60px auto;
+      padding: 0 24px;
+      color: #1a1a1a;
+      background: #f9f9f9;
+    }
+    h1 { font-size: 1.4rem; margin-bottom: 4px; }
+    p { color: #555; margin: 0 0 24px; }
+    .bookmarklet-link {
+      display: inline-block;
+      padding: 12px 20px;
+      background: #6c47ff;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 24px;
+      cursor: grab;
+    }
+    .bookmarklet-link:hover { background: #5535e0; }
+    .steps {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+    }
+    .steps ol { margin: 0; padding-left: 20px; }
+    .steps li { margin-bottom: 6px; color: #333; }
+    .zones {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 16px 20px;
+    }
+    .zones h2 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; color: #888; margin: 0 0 10px; }
+    .zones ul { margin: 0; padding-left: 20px; }
+    .zones li { font-family: monospace; font-size: 0.95rem; margin-bottom: 4px; color: #333; }
+  </style>
+</head>
+<body>
+  <h1>Make.com Multi-Zone Opener</h1>
+  <p>Opens the current page across all production zones in new tabs.</p>
+
+  <a class="bookmarklet-link" href="javascript:(function(){var zones=['us1.make.com','us2.make.com','eu1.make.com','eu2.make.com','us1.make.celonis.com','eu1.make.celonis.com','we.make.com'];var path=location.pathname+location.search+location.hash;var currentHost=location.host;zones.filter(function(z){return z!==currentHost;}).forEach(function(z){var a=document.createElement('a');a.href='https://'+z+path;a.target='_blank';a.rel='noopener';document.body.appendChild(a);a.click();document.body.removeChild(a);});})();">
+    Open in All Zones
+  </a>
+
+  <div class="steps">
+    <ol>
+      <li><strong>Allow popups:</strong> In Chrome, go to <code>Settings → Privacy and security → Site settings → Pop-ups and redirects</code>, then add <code>file://*</code> (or your make.com domain) to the <em>Allowed</em> list.</li>
+      <li><strong>Drag</strong> the purple button above to your bookmarks bar.</li>
+      <li>Navigate to any <code>*.make.com</code> URL in the browser.</li>
+      <li>Click the bookmark — all zones open in new tabs.</li>
+    </ol>
+  </div>
+
+  <div class="zones">
+    <h2>Zones</h2>
+    <ul>
+      <li>us1.make.com</li>
+      <li>us2.make.com</li>
+      <li>eu1.make.com</li>
+      <li>eu2.make.com</li>
+      <li>us1.make.celonis.com</li>
+      <li>eu1.make.celonis.com</li>
+      <li>we.make.com</li>
+    </ul>
+  </div>
+
+  <p style="margin-top: 32px; font-size: 0.85rem; color: #aaa; text-align: center;">
+    Built by <a href="mailto:l.blinnikovs@make.com" style="color: #aaa;">l.blinnikovs@make.com</a>
+  </p>
+</body>
+</html>
